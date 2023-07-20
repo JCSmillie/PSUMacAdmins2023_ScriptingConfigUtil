@@ -16,7 +16,8 @@
 # 
 #Profile to get iPad onto a temporary provisioning network.  DO NOT USE YOUR MAIN NETWORK.
 #This profile can be exported from your MDM or created using Apple Configurator2 before hand.
-TEMPORARYWIFIPROFILE="/Users/jsmillie//GitHub/CustomProfiles/SmillieWifiAutoJoinProfile-Signed.mobileconfig"
+#TEMPORARYWIFIPROFILE="/Users/jsmillie//GitHub/CustomProfiles/SmillieWifiAutoJoinProfile-Signed.mobileconfig"
+TEMPORARYWIFIPROFILE="/Users/presenter/Desktop/TempProfilePresentation.mobileconfig"
 
 #Restore device which is connected.
 ####NOTE THIS WILL ONLY WORK ON A DEVICE YOUR MACHINE HAS TRUST WITH

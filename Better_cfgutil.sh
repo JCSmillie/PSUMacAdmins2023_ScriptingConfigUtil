@@ -17,7 +17,8 @@
 
 #Profile to get iPad onto a temporary provisioning network.  DO NOT USE YOUR MAIN NETWORK.
 #This profile can be exported from your MDM or created using Apple Configurator2 before hand.
-TEMPORARYWIFIPROFILE="/Users/Shared/ShakeNBake/Profiles/AppleStoreWifi7Days.mobileconfig"
+#TEMPORARYWIFIPROFILE="/Users/Shared/ShakeNBake/Profiles/AppleStoreWifi7Days.mobileconfig"
+TEMPORARYWIFIPROFILE="/Users/presenter/Desktop/TempProfilePresentation.mobileconfig"
 
 echo "The iPad connected has:"
 echo "-------------------------"
@@ -43,7 +44,7 @@ RWeActivated=$(echo "$GetDeviceState" | grep -a1 activationState: | tail -1)
 
 #Function to perform final setup.  Because we are calling this twice I
 #made a function to reference so we don't have to make changes to it twice.
-FinalSeteup() {
+FinalSetup() {
 	echo "$ECID / ($UDID) is waiting for setup..  Doing it."
 	
 	#Install Wifi Profile to get device on the network.
@@ -60,7 +61,7 @@ FinalSeteup() {
 #out of the box.
 if [ "$RWeActivated" = "Unactivated" ]; then
 	#Call Final Setup Function
-	FinalSeteup
+	FinalSetup
 
 	
 #Check if iPad is in DFU/Recovery Mode
@@ -77,7 +78,7 @@ elif  [ "$Devicebootstate" = "Recovery" ]; then
 	sleep 15
 	
 	#Call Final Setup routine.
-	FinalSeteup
+	FinalSetup
 
 
 #Check if iPad is booted and paired.  We can only PAIR if we have Trust.
